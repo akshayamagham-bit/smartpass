@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard · SmartPass</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/admin-dashboard.html" class="active">Dashboard</a>
+      <a href="/admin-events.html">Manage Events</a>
+      <a href="/admin-add-event.html">Add Event</a>
+      <a href="/admin-students.html">Students</a>
+      <a href="/admin-registrations.html">Registrations</a>
+      <a href="/admin-attendance.html">Attendance</a>
+      <a href="/admin-reports.html">Reports</a>
+      <a href="/index.html" class="sidebar-logout">Logout</a>
+    </nav>
+  </aside>
+  <div class="dashboard-main">
+    <header class="dashboard-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h1>Admin Dashboard</h1>
+      <div class="topbar-user">
+        <span>Admin User</span>
+        <span class="avatar">A</span>
+      </div>
+    </header>
+    <div class="dashboard-content">
+
+<div class="dash-greeting">
+  <h2>Welcome, Admin User 👋</h2>
+  <p>Here's your campus event platform at a glance.</p>
+</div>
+
+<div class="stat-cards">
+  <div class="stat-card"><span class="stat-card-icon">👥</span><div><span class="stat-card-num">5</span><span class="stat-card-label">Total Students</span></div></div>
+  <div class="stat-card"><span class="stat-card-icon">📅</span><div><span class="stat-card-num">8</span><span class="stat-card-label">Total Events</span></div></div>
+  <div class="stat-card"><span class="stat-card-icon">✓</span><div><span class="stat-card-num">5</span><span class="stat-card-label">Registrations</span></div></div>
+  <div class="stat-card"><span class="stat-card-icon">🎫</span><div><span class="stat-card-num">1</span><span class="stat-card-label">Stamps Issued</span></div></div>
+</div>
+
+<div class="quick-actions">
+  <h3>Quick Actions</h3>
+  <div class="qa-grid">
+    <a href="/admin-add-event.html" class="qa-card"><span class="qa-icon">+</span><span>Create Event</span></a>
+    <a href="/admin-events.html" class="qa-card"><span class="qa-icon">📋</span><span>Manage Events</span></a>
+    <a href="/admin-registrations.html" class="qa-card"><span class="qa-icon">📝</span><span>View Registrations</span></a>
+    <a href="/admin-attendance.html" class="qa-card"><span class="qa-icon">✓</span><span>Verify Attendance</span></a>
+  </div>
+</div>
+
+<div class="dash-grid">
+  <div class="dash-panel">
+    <div class="panel-head"><h3>Recent Events</h3><a href="/admin-events.html" class="link-arrow">All →</a></div>
+    <ul class="mini-event-list">
+      <li>
+        <div class="mini-event">
+          <span class="mini-cat cat-workshop">✎</span>
+          <div><strong>Web Development Workshop</strong><span>05 Sep 2026 · Seminar Hall 1</span></div>
+        </div>
+      </li>
+      <li>
+        <div class="mini-event">
+          <span class="mini-cat cat-seminar">◆</span>
+          <div><strong>AI &amp; ML Seminar</strong><span>12 Sep 2026 · Main Auditorium</span></div>
+        </div>
+      </li>
+      <li>
+        <div class="mini-event">
+          <span class="mini-cat cat-cultural">♪</span>
+          <div><strong>Annual Cultural Fest</strong><span>20 Sep 2026 · Open Air Theatre</span></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="dash-panel">
+    <div class="panel-head"><h3>Recent Registrations</h3><a href="/admin-registrations.html" class="link-arrow">All →</a></div>
+    <ul class="activity-list">
+      <li><span class="activity-tick">📝</span> <strong>Rahul Sharma</strong> registered for <strong>Web Development Workshop</strong></li>
+      <li><span class="activity-tick">📝</span> <strong>Rahul Sharma</strong> registered for <strong>AI &amp; ML Seminar</strong></li>
+      <li><span class="activity-tick">📝</span> <strong>Ananya Verma</strong> registered for <strong>Inter-College Hackathon</strong></li>
+    </ul>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

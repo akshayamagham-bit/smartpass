@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registrations · SmartPass Admin</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/admin-dashboard.html">Dashboard</a>
+      <a href="/admin-events.html">Manage Events</a>
+      <a href="/admin-add-event.html">Add Event</a>
+      <a href="/admin-students.html">Students</a>
+      <a href="/admin-registrations.html" class="active">Registrations</a>
+      <a href="/admin-attendance.html">Attendance</a>
+      <a href="/admin-reports.html">Reports</a>
+      <a href="/index.html" class="sidebar-logout">Logout</a>
+    </nav>
+  </aside>
+  <div class="dashboard-main">
+    <header class="dashboard-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h1>Registrations</h1>
+      <div class="topbar-user">
+        <span>Admin User</span>
+        <span class="avatar">A</span>
+      </div>
+    </header>
+    <div class="dashboard-content">
+
+<form class="filter-bar">
+  <label class="inline-label">Filter by event:
+    <select id="eventFilter" onchange="filterRegs()">
+      <option value="">All events</option>
+      <option value="web">Web Development Workshop</option>
+      <option value="ai">AI &amp; ML Seminar</option>
+      <option value="cultural">Annual Cultural Fest</option>
+      <option value="hack">Inter-College Hackathon</option>
+    </select>
+  </label>
+</form>
+
+<div class="admin-table">
+  <table id="regTable">
+    <thead><tr><th>Student</th><th>Register No.</th><th>Department</th><th>Event</th><th>Event Date</th><th>Reg. Status</th><th>Attendance</th></tr></thead>
+    <tbody>
+      <tr data-event="web"><td>Rahul Sharma</td><td>CS21B001</td><td>CSE</td><td>Web Development Workshop</td><td>05 Sep 2026</td><td><span class="badge badge-info">registered</span></td><td><span class="badge badge-success">Present</span></td></tr>
+      <tr data-event="ai"><td>Rahul Sharma</td><td>CS21B001</td><td>CSE</td><td>AI &amp; ML Seminar</td><td>12 Sep 2026</td><td><span class="badge badge-info">registered</span></td><td><span class="badge">Pending</span></td></tr>
+      <tr data-event="cultural"><td>Rahul Sharma</td><td>CS21B001</td><td>CSE</td><td>Annual Cultural Fest</td><td>20 Sep 2026</td><td><span class="badge badge-info">registered</span></td><td><span class="badge">Pending</span></td></tr>
+      <tr data-event="ai"><td>Ananya Verma</td><td>EC21B014</td><td>ECE</td><td>AI &amp; ML Seminar</td><td>12 Sep 2026</td><td><span class="badge badge-info">registered</span></td><td><span class="badge">Pending</span></td></tr>
+      <tr data-event="hack"><td>Ananya Verma</td><td>EC21B014</td><td>ECE</td><td>Inter-College Hackathon</td><td>28 Sep 2026</td><td><span class="badge badge-info">registered</span></td><td><span class="badge">Pending</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+<script>
+function filterRegs() {
+  var val = document.getElementById('eventFilter').value;
+  document.querySelectorAll('#regTable tbody tr').forEach(function(row) {
+    var ev = row.dataset.event || '';
+    row.style.display = (!val || ev === val) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Students · SmartPass Admin</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/admin-dashboard.html">Dashboard</a>
+      <a href="/admin-events.html">Manage Events</a>
+      <a href="/admin-add-event.html">Add Event</a>
+      <a href="/admin-students.html" class="active">Students</a>
+      <a href="/admin-registrations.html">Registrations</a>
+      <a href="/admin-attendance.html">Attendance</a>
+      <a href="/admin-reports.html">Reports</a>
+      <a href="/index.html" class="sidebar-logout">Logout</a>
+    </nav>
+  </aside>
+  <div class="dashboard-main">
+    <header class="dashboard-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h1>Students</h1>
+      <div class="topbar-user">
+        <span>Admin User</span>
+        <span class="avatar">A</span>
+      </div>
+    </header>
+    <div class="dashboard-content">
+
+<form class="filter-bar">
+  <div class="search-input"><input type="text" id="studentSearch" placeholder="Search by name, register no, email, department…"></div>
+  <button type="button" class="btn btn-primary" onclick="filterStudents()">Search</button>
+</form>
+
+<div class="admin-table">
+  <table id="studentTable">
+    <thead><tr><th>Name</th><th>Register No.</th><th>Department</th><th>Year</th><th>Email</th><th>Stamps</th></tr></thead>
+    <tbody>
+      <tr data-search="rahul sharma cs21b001 rahul@smartpass.edu cse"><td><strong>Rahul Sharma</strong></td><td>CS21B001</td><td>CSE</td><td>3rd Year</td><td>rahul@smartpass.edu</td><td>1 🎫</td></tr>
+      <tr data-search="ananya verma ec21b014 ananya@smartpass.edu ece"><td><strong>Ananya Verma</strong></td><td>EC21B014</td><td>ECE</td><td>3rd Year</td><td>ananya@smartpass.edu</td><td>0 🎫</td></tr>
+      <tr data-search="teja reddy cs22b023 teja@smartpass.edu cse"><td><strong>Teja Reddy</strong></td><td>CS22B023</td><td>CSE</td><td>2nd Year</td><td>teja@smartpass.edu</td><td>0 🎫</td></tr>
+      <tr data-search="priya nair it21b009 priya@smartpass.edu it"><td><strong>Priya Nair</strong></td><td>IT21B009</td><td>IT</td><td>3rd Year</td><td>priya@smartpass.edu</td><td>0 🎫</td></tr>
+      <tr data-search="karan mehta me22b031 karan@smartpass.edu mech"><td><strong>Karan Mehta</strong></td><td>ME22B031</td><td>MECH</td><td>2nd Year</td><td>karan@smartpass.edu</td><td>0 🎫</td></tr>
+    </tbody>
+  </table>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+<script>
+function filterStudents() {
+  var q = document.getElementById('studentSearch').value.toLowerCase();
+  document.querySelectorAll('#studentTable tbody tr').forEach(function(row) {
+    var data = (row.dataset.search || '').toLowerCase();
+    row.style.display = (!q || data.indexOf(q) !== -1) ? '' : 'none';
+  });
+}
+document.getElementById('studentSearch').addEventListener('input', filterStudents);
+</script>
+</body>
+</html>

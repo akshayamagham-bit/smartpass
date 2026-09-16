@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE events SYSTEM "events.dtd">
+<?xml-stylesheet type="text/xsl" href="events.xsl"?>
+<events>
+    <event>
+        <id>101</id>
+        <name>Web Development Workshop</name>
+        <category>Workshop</category>
+        <date>2026-09-05</date>
+        <time>10:00 AM</time>
+        <venue>Seminar Hall 1</venue>
+    </event>
+    <event>
+        <id>102</id>
+        <name>AI &amp; Machine Learning Seminar</name>
+        <category>Seminar</category>
+        <date>2026-09-12</date>
+        <time>02:00 PM</time>
+        <venue>Main Auditorium</venue>
+    </event>
+    <event>
+        <id>103</id>
+        <name>Annual Cultural Fest</name>
+        <category>Cultural</category>
+        <date>2026-09-20</date>
+        <time>06:00 PM</time>
+        <venue>Open Air Theatre</venue>
+    </event>
+    <event>
+        <id>104</id>
+        <name>Inter-College Hackathon</name>
+        <category>Competition</category>
+        <date>2026-09-28</date>
+        <time>09:00 AM</time>
+        <venue>Innovation Lab</venue>
+    </event>
+    <event>
+        <id>105</id>
+        <name>Sports Meet 2026</name>
+        <category>Sports</category>
+        <date>2026-10-05</date>
+        <time>08:00 AM</time>
+        <venue>College Ground</venue>
+    </event>
+    <event>
+        <id>106</id>
+        <name>Photography Competition</name>
+        <category>Competition</category>
+        <date>2026-10-12</date>
+        <time>11:00 AM</time>
+        <venue>Conference Hall</venue>
+    </event>
+    <event>
+        <id>107</id>
+        <name>Entrepreneurship Workshop</name>
+        <category>Workshop</category>
+        <date>2026-10-18</date>
+        <time>10:30 AM</time>
+        <venue>Seminar Hall 2</venue>
+    </event>
+    <event>
+        <id>108</id>
+        <name>Science Exhibition</name>
+        <category>Technical</category>
+        <date>2026-10-25</date>
+        <time>09:30 AM</time>
+        <venue>Exhibition Hall</venue>
+    </event>
+</events>

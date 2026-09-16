@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile · SmartPass</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/student-dashboard.html">Dashboard</a>
+      <a href="/student-events.html">Discover Events</a>
+      <a href="/student-my-events.html">My Events</a>
+      <a href="/student-passport.html">My Passport</a>
+      <a href="/student-achievements.html">Achievements</a>
+      <a href="/student-leaderboard.html">Leaderboard</a>
+      <a href="/student-profile.html" class="active">Profile</a>
+      <a href="/index.html" class="sidebar-logout">Logout</a>
+    </nav>
+  </aside>
+  <div class="dashboard-main">
+    <header class="dashboard-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h1>Profile</h1>
+      <div class="topbar-user">
+        <span>Rahul Sharma</span>
+        <span class="avatar">R</span>
+      </div>
+    </header>
+    <div class="dashboard-content">
+
+<div class="profile-grid">
+  <div class="profile-card">
+    <div class="profile-avatar">R</div>
+    <h2>Rahul Sharma</h2>
+    <p class="profile-reg">CS21B001</p>
+    <p class="profile-email">rahul@smartpass.edu</p>
+    <div class="profile-stats">
+      <div><span>1</span><label>Stamps</label></div>
+      <div><span>1</span><label>Achievements</label></div>
+      <div><span>1</span><label>Rank</label></div>
+    </div>
+    <div class="profile-meta">
+      <p><strong>Department:</strong> CSE</p>
+      <p><strong>Year:</strong> 3rd Year</p>
+      <p><strong>Phone:</strong> 9876543210</p>
+    </div>
+  </div>
+
+  <div class="profile-forms">
+    <div class="dash-panel">
+      <div class="panel-head"><h3>Edit Profile</h3></div>
+      <form id="profileForm" class="auth-form">
+        <label><span>Name</span><input type="text" name="name" required value="Rahul Sharma"></label>
+        <label><span>Phone</span><input type="text" name="phone" value="9876543210"></label>
+        <label><span>Bio</span><textarea name="bio" rows="3" placeholder="Tell us about yourself…">Passionate about web development and campus events.</textarea></label>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </form>
+    </div>
+
+    <div class="dash-panel">
+      <div class="panel-head"><h3>Change Password</h3></div>
+      <form id="pwForm" class="auth-form" novalidate>
+        <label><span>Current Password</span>
+          <div class="password-field"><input type="password" name="current_password" id="cpw" required><button type="button" class="pw-toggle" data-target="cpw">👁</button></div>
+        </label>
+        <label><span>New Password</span>
+          <div class="password-field"><input type="password" name="new_password" id="npw" required minlength="6"><button type="button" class="pw-toggle" data-target="npw">👁</button></div>
+        </label>
+        <label><span>Confirm New Password</span>
+          <div class="password-field"><input type="password" name="confirm_password" id="cnpw" required><button type="button" class="pw-toggle" data-target="cnpw">👁</button></div>
+        </label>
+        <button type="submit" class="btn btn-dark">Change Password</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+<script>
+document.getElementById('profileForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  window.showToast('Profile updated successfully', 'success');
+});
+document.getElementById('pwForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var npw = document.getElementById('npw');
+  var cnpw = document.getElementById('cnpw');
+  if (npw.value !== cnpw.value) { window.showToast('New passwords do not match', 'error'); return; }
+  if (npw.value.length < 6) { window.showToast('Password must be at least 6 characters', 'error'); return; }
+  window.showToast('Password changed successfully', 'success');
+  this.reset();
+});
+</script>
+</body>
+</html>

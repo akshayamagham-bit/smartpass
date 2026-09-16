@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Event · SmartPass Admin</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/admin-dashboard.html">Dashboard</a>
+      <a href="/admin-events.html">Manage Events</a>
+      <a href="/admin-add-event.html" class="active">Add Event</a>
+      <a href="/admin-students.html">Students</a>
+      <a href="/admin-registrations.html">Registrations</a>
+      <a href="/admin-attendance.html">Attendance</a>
+      <a href="/admin-reports.html">Reports</a>
+      <a href="/index.html" class="sidebar-logout">Logout</a>
+    </nav>
+  </aside>
+  <div class="dashboard-main">
+    <header class="dashboard-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h1>Add Event</h1>
+      <div class="topbar-user">
+        <span>Admin User</span>
+        <span class="avatar">A</span>
+      </div>
+    </header>
+    <div class="dashboard-content">
+
+<div class="dash-panel">
+  <div class="panel-head"><h3>Create New Event</h3></div>
+  <form id="addEventForm" class="auth-form wide" novalidate>
+    <label><span>Event Name</span><input type="text" name="event_name" required></label>
+    <label><span>Description</span><textarea name="description" rows="4" required></textarea></label>
+    <div class="form-row">
+      <label><span>Category</span>
+        <select name="category">
+          <option>Technical</option><option>Cultural</option><option>Sports</option>
+          <option>Workshop</option><option>Seminar</option><option>Club</option><option>Competition</option>
+        </select>
+      </label>
+      <label><span>Capacity</span><input type="number" name="capacity" min="1" required value="100"></label>
+    </div>
+    <div class="form-row">
+      <label><span>Date</span><input type="date" name="event_date" required></label>
+      <label><span>Time</span><input type="text" name="event_time" required placeholder="10:00 AM"></label>
+    </div>
+    <label><span>Venue</span><input type="text" name="venue" required></label>
+    <label><span>Organizer</span><input type="text" name="organizer" required></label>
+    <button type="submit" class="btn btn-primary">Create Event</button>
+    <a href="/admin-events.html" class="btn btn-ghost">Cancel</a>
+  </form>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+<script>
+document.getElementById('addEventForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  if (!this.checkValidity()) { window.showToast('Please fill all required fields', 'error'); return; }
+  window.showToast('Event created successfully', 'success');
+  setTimeout(function() { window.location.href = '/admin-events.html'; }, 1200);
+});
+</script>
+</body>
+</html>

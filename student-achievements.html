@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Achievements · SmartPass</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/student-dashboard.html">Dashboard</a>
+      <a href="/student-events.html">Discover Events</a>
+      <a href="/student-my-events.html">My Events</a>
+      <a href="/student-passport.html">My Passport</a>
+      <a href="/student-achievements.html" class="active">Achievements</a>
+      <a href="/student-leaderboard.html">Leaderboard</a>
+      <a href="/student-profile.html">Profile</a>
+      <a href="/index.html" class="sidebar-logout">Logout</a>
+    </nav>
+  </aside>
+  <div class="dashboard-main">
+    <header class="dashboard-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h1>Achievements</h1>
+      <div class="topbar-user">
+        <span>Rahul Sharma</span>
+        <span class="avatar">R</span>
+      </div>
+    </header>
+    <div class="dashboard-content">
+
+<div class="ach-summary">
+  <div class="ach-summary-stat"><span class="ach-big">1</span><span>Unlocked</span></div>
+  <div class="ach-summary-stat"><span class="ach-big">5</span><span>Locked</span></div>
+  <div class="ach-summary-stat"><span class="ach-big">1</span><span>Stamps</span></div>
+</div>
+
+<div class="achievement-grid">
+  <div class="achievement-card">
+    <div class="achievement-icon">🏅</div>
+    <div class="achievement-body">
+      <h3>First Step <span class="ach-check">✓</span></h3>
+      <p>Attend your first event.</p>
+      <span class="badge badge-success">Unlocked</span>
+    </div>
+  </div>
+  <div class="achievement-card locked">
+    <div class="achievement-icon">🔒</div>
+    <div class="achievement-body">
+      <h3>Event Explorer</h3>
+      <p>Attend 5 events.</p>
+      <div class="ach-progress">
+        <div class="progress-bar small"><div class="progress-fill" style="width: 20%"></div></div>
+        <span class="ach-count">1 / 5</span>
+      </div>
+    </div>
+  </div>
+  <div class="achievement-card locked">
+    <div class="achievement-icon">🔒</div>
+    <div class="achievement-body">
+      <h3>Campus Champion</h3>
+      <p>Attend 10 events.</p>
+      <div class="ach-progress">
+        <div class="progress-bar small"><div class="progress-fill" style="width: 10%"></div></div>
+        <span class="ach-count">1 / 10</span>
+      </div>
+    </div>
+  </div>
+  <div class="achievement-card locked">
+    <div class="achievement-icon">🔒</div>
+    <div class="achievement-body">
+      <h3>Tech Enthusiast</h3>
+      <p>Attend 5 technical events.</p>
+      <div class="ach-progress">
+        <div class="progress-bar small"><div class="progress-fill" style="width: 0%"></div></div>
+        <span class="ach-count">0 / 5</span>
+      </div>
+    </div>
+  </div>
+  <div class="achievement-card locked">
+    <div class="achievement-icon">🔒</div>
+    <div class="achievement-body">
+      <h3>Culture Lover</h3>
+      <p>Attend 5 cultural events.</p>
+      <div class="ach-progress">
+        <div class="progress-bar small"><div class="progress-fill" style="width: 0%"></div></div>
+        <span class="ach-count">0 / 5</span>
+      </div>
+    </div>
+  </div>
+  <div class="achievement-card locked">
+    <div class="achievement-icon">🔒</div>
+    <div class="achievement-body">
+      <h3>All-Rounder</h3>
+      <p>Participate in events from 3 different categories.</p>
+      <div class="ach-progress">
+        <div class="progress-bar small"><div class="progress-fill" style="width: 33%"></div></div>
+        <span class="ach-count">1 / 3</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

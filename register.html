@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register · Smart College Event Passport</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+  <div class="container nav-wrap">
+    <a href="/index.html" class="brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/index.html">Home</a>
+      <a href="/events.html">Events</a>
+      <a href="/about.html">About</a>
+      <a href="/login.html">Login</a>
+      <a href="/register.html" class="nav-cta active">Get Started</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="auth-section">
+  <div class="auth-card">
+    <h1>Create your passport</h1>
+    <p class="auth-sub">Join SmartPass and start collecting stamps</p>
+
+    <form id="registerForm" class="auth-form" action="/student-dashboard.html" novalidate>
+      <label><span>Full Name</span><input type="text" name="name" required placeholder="Your name"></label>
+      <div class="form-row">
+        <label><span>Register Number</span><input type="text" name="register_number" required placeholder="CS21B001"></label>
+        <label><span>Phone</span><input type="text" name="phone" placeholder="9876543210"></label>
+      </div>
+      <label><span>Email</span><input type="email" name="email" required placeholder="you@smartpass.edu"></label>
+      <div class="form-row">
+        <label>
+          <span>Department</span>
+          <select name="department">
+            <option>CSE</option><option>ECE</option><option>IT</option>
+            <option>MECH</option><option>CIVIL</option><option>EEE</option><option>BME</option>
+          </select>
+        </label>
+        <label>
+          <span>Year</span>
+          <select name="year">
+            <option>1st Year</option><option>2nd Year</option>
+            <option selected>3rd Year</option><option>4th Year</option>
+          </select>
+        </label>
+      </div>
+      <label><span>Password</span>
+        <div class="password-field">
+          <input type="password" name="password" id="pw1" required minlength="6" placeholder="At least 6 characters">
+          <button type="button" class="pw-toggle" data-target="pw1" aria-label="Show password">👁</button>
+        </div>
+      </label>
+      <label><span>Confirm Password</span>
+        <div class="password-field">
+          <input type="password" name="confirm_password" id="pw2" required placeholder="Re-enter password">
+          <button type="button" class="pw-toggle" data-target="pw2" aria-label="Show password">👁</button>
+        </div>
+      </label>
+      <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+    </form>
+    <p class="auth-switch">Already have an account? <a href="/login.html">Login</a></p>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><span class="brand-mark">SP</span><span class="brand-name">SMART<span class="brand-accent">PASS</span></span></div>
+      <p class="footer-tag">Discover. Participate. Collect. Achieve.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="/events.html">Events</a>
+      <a href="/about.html">About</a>
+      <a href="/register.html">Register</a>
+    </div>
+    <div>
+      <h4>Account</h4>
+      <a href="/login.html">Login</a>
+      <a href="/student-dashboard.html">Student Dashboard</a>
+      <a href="/admin-dashboard.html">Admin Dashboard</a>
+    </div>
+    <div>
+      <h4>Project</h4>
+      <p class="footer-meta">Web Technologies Academic Project<br>Smart College Event Passport</p>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© 2026 SmartPass · Built for Web Technologies Lab Project</p>
+  </div>
+</footer>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+<script>
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+  var pw1 = document.getElementById('pw1');
+  var pw2 = document.getElementById('pw2');
+  if (pw1.value !== pw2.value) {
+    e.preventDefault();
+    alert('Passwords do not match');
+    return;
+  }
+  if (pw1.value.length < 6) {
+    e.preventDefault();
+    alert('Password must be at least 6 characters');
+    return;
+  }
+  e.preventDefault();
+  window.location.href = '/student-dashboard.html?welcome=1';
+});
+</script>
+</body>
+</html>

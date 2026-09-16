@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaderboard · SmartPass</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/student-dashboard.html">Dashboard</a>
+      <a href="/student-events.html">Discover Events</a>
+      <a href="/student-my-events.html">My Events</a>
+      <a href="/student-passport.html">My Passport</a>
+      <a href="/student-achievements.html">Achievements</a>
+      <a href="/student-leaderboard.html" class="active">Leaderboard</a>
+      <a href="/student-profile.html">Profile</a>
+      <a href="/index.html" class="sidebar-logout">Logout</a>
+    </nav>
+  </aside>
+  <div class="dashboard-main">
+    <header class="dashboard-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h1>Leaderboard</h1>
+      <div class="topbar-user">
+        <span>Rahul Sharma</span>
+        <span class="avatar">R</span>
+      </div>
+    </header>
+    <div class="dashboard-content">
+
+<form class="filter-bar" id="leaderboardFilter">
+  <input type="hidden" id="filterHidden" value="overall">
+  <div class="category-pills">
+    <button type="button" class="pill active" data-filter="overall">Overall</button>
+    <button type="button" class="pill" data-filter="month">This Month</button>
+    <button type="button" class="pill" data-filter="department">Department</button>
+  </div>
+</form>
+
+<div class="leaderboard-table">
+  <table>
+    <thead><tr><th>Rank</th><th>Student</th><th>Department</th><th>Stamps</th></tr></thead>
+    <tbody>
+      <tr class="is-me rank-0">
+        <td class="lb-rank-cell">🥇</td>
+        <td>Rahul Sharma <span class="you-tag">(You)</span></td>
+        <td>CSE</td>
+        <td class="lb-stamp-count">1 🎫</td>
+      </tr>
+      <tr class="rank-1">
+        <td class="lb-rank-cell">🥈</td>
+        <td>Ananya Verma</td>
+        <td>ECE</td>
+        <td class="lb-stamp-count">0 🎫</td>
+      </tr>
+      <tr class="rank-2">
+        <td class="lb-rank-cell">🥉</td>
+        <td>Teja Reddy</td>
+        <td>CSE</td>
+        <td class="lb-stamp-count">0 🎫</td>
+      </tr>
+      <tr>
+        <td class="lb-rank-cell">4</td>
+        <td>Priya Nair</td>
+        <td>IT</td>
+        <td class="lb-stamp-count">0 🎫</td>
+      </tr>
+      <tr>
+        <td class="lb-rank-cell">5</td>
+        <td>Karan Mehta</td>
+        <td>MECH</td>
+        <td class="lb-stamp-count">0 🎫</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+<script>
+(function() {
+  var filter = document.getElementById('filterHidden');
+  var pills = document.getElementById('leaderboardFilter');
+  if (!pills) return;
+  pills.querySelectorAll('.pill').forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      var mode = pill.getAttribute('data-filter');
+      filter.value = mode;
+      var rows = document.querySelectorAll('.leaderboard-table tbody tr');
+      rows.forEach(function(r) { r.style.display = ''; });
+      if (mode === 'department') {
+        rows.forEach(function(r) {
+          var dept = r.children[2] ? r.children[2].textContent.trim() : '';
+          if (dept !== 'CSE') r.style.display = 'none';
+        });
+      }
+      if (mode === 'month') {
+        rows.forEach(function(r) {
+          var stamps = r.children[3] ? r.children[3].textContent.trim() : '0';
+          if (stamps === '0 🎫') r.style.display = 'none';
+        });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

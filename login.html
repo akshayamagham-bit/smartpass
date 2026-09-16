@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login · Smart College Event Passport</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+  <div class="container nav-wrap">
+    <a href="/index.html" class="brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/index.html">Home</a>
+      <a href="/events.html">Events</a>
+      <a href="/about.html">About</a>
+      <a href="/login.html" class="active">Login</a>
+      <a href="/register.html" class="nav-cta">Get Started</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="auth-section">
+  <div class="auth-card">
+    <h1>Welcome back</h1>
+    <p class="auth-sub">Login to your SmartPass account</p>
+
+    <div class="role-toggle" id="roleToggle">
+      <button type="button" class="role-btn active" data-role="student">Student</button>
+      <button type="button" class="role-btn" data-role="admin">Admin</button>
+    </div>
+
+    <form id="loginForm" class="auth-form" action="/student-dashboard.html">
+      <input type="hidden" name="role" id="roleHidden" value="student">
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" required placeholder="you@smartpass.edu">
+      </label>
+      <label>
+        <span>Password</span>
+        <div class="password-field">
+          <input type="password" name="password" id="passwordInput" required placeholder="••••••••">
+          <button type="button" class="pw-toggle" data-target="passwordInput" aria-label="Show password">👁</button>
+        </div>
+      </label>
+      <button type="submit" class="btn btn-primary btn-block">Login</button>
+    </form>
+
+    <p class="auth-switch">New student? <a href="/register.html">Create an account</a></p>
+
+    <div class="demo-creds">
+      <h4>Demo credentials</h4>
+      <p><strong>Student:</strong> rahul@smartpass.edu / password123</p>
+      <p><strong>Admin:</strong> admin@smartpass.edu / admin123</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><span class="brand-mark">SP</span><span class="brand-name">SMART<span class="brand-accent">PASS</span></span></div>
+      <p class="footer-tag">Discover. Participate. Collect. Achieve.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <a href="/events.html">Events</a>
+      <a href="/about.html">About</a>
+      <a href="/register.html">Register</a>
+    </div>
+    <div>
+      <h4>Account</h4>
+      <a href="/login.html">Login</a>
+      <a href="/student-dashboard.html">Student Dashboard</a>
+      <a href="/admin-dashboard.html">Admin Dashboard</a>
+    </div>
+    <div>
+      <h4>Project</h4>
+      <p class="footer-meta">Web Technologies Academic Project<br>Smart College Event Passport</p>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <p>© 2026 SmartPass · Built for Web Technologies Lab Project</p>
+  </div>
+</footer>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var role = document.getElementById('roleHidden').value;
+  if (role === 'admin') {
+    window.location.href = '/admin-dashboard.html';
+  } else {
+    window.location.href = '/student-dashboard.html';
+  }
+});
+</script>
+</body>
+</html>
