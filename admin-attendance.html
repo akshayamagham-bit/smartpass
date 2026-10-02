@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance · SmartPass Admin</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/admin-dashboard.html">Dashboard</a>
+      <a href="/admin-events.html">Manage Events</a>
+      <a href="/admin-add-event.html">Add Event</a>
+      <a href="/admin-students.html">Students</a>
+      <a href="/admin-registrations.html">Registrations</a>
+      <a href="/admin-attendance.html" class="active">Attendance</a>
+      <a href="/admin-reports.html">Reports</a>
+      <a href="/index.html" class="sidebar-logout">Logout</a>
+    </nav>
+  </aside>
+  <div class="dashboard-main">
+    <header class="dashboard-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h1>Verify Attendance</h1>
+      <div class="topbar-user">
+        <span>Admin User</span>
+        <span class="avatar">A</span>
+      </div>
+    </header>
+    <div class="dashboard-content">
+
+<form class="filter-bar">
+  <label class="inline-label">Select event:
+    <select id="attEventFilter" onchange="toggleEvent()">
+      <option value="">— Choose an event —</option>
+      <option value="ai" selected>AI &amp; ML Seminar (12 Sep 2026)</option>
+      <option value="cultural">Annual Cultural Fest (20 Sep 2026)</option>
+    </select>
+  </label>
+</form>
+
+<div class="admin-table" id="attTable">
+  <table>
+    <thead><tr><th>Student</th><th>Register No.</th><th>Department</th><th>Current</th><th>Mark Attendance</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Rahul Sharma</strong></td><td>CS21B001</td><td>CSE</td>
+        <td><span class="badge">Pending</span></td>
+        <td>
+          <form style="display:flex; gap:8px;" onsubmit="return false;">
+            <button type="button" class="btn btn-sm btn-success" onclick="markPresent(this)">Present ✓</button>
+            <button type="button" class="btn btn-sm btn-danger" onclick="markAbsent(this)">Absent ✗</button>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Ananya Verma</strong></td><td>EC21B014</td><td>ECE</td>
+        <td><span class="badge">Pending</span></td>
+        <td>
+          <form style="display:flex; gap:8px;" onsubmit="return false;">
+            <button type="button" class="btn btn-sm btn-success" onclick="markPresent(this)">Present ✓</button>
+            <button type="button" class="btn btn-sm btn-danger" onclick="markAbsent(this)">Absent ✗</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="empty-state" id="noEventMsg" style="display:none;">Select an event above to verify attendance.</p>
+
+    </div>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+<script>
+function toggleEvent() {
+  var val = document.getElementById('attEventFilter').value;
+  document.getElementById('attTable').style.display = val ? '' : 'none';
+  document.getElementById('noEventMsg').style.display = val ? 'none' : '';
+}
+function markPresent(btn) {
+  var cell = btn.closest('tr').children[3];
+  cell.innerHTML = '<span class="badge badge-success">Present</span>';
+  btn.disabled = true;
+  btn.parentElement.querySelector('.btn-danger').disabled = false;
+  window.showToast('Attendance marked Present — stamp awarded!', 'success');
+}
+function markAbsent(btn) {
+  var cell = btn.closest('tr').children[3];
+  cell.innerHTML = '<span class="badge badge-error">Absent</span>';
+  btn.disabled = true;
+  btn.parentElement.querySelector('.btn-success').disabled = false;
+  window.showToast('Attendance marked Absent — stamp removed', 'error');
+}
+</script>
+</body>
+</html>

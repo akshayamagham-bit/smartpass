@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discover Events · SmartPass</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/student-dashboard.html">Dashboard</a>
+      <a href="/student-events.html" class="active">Discover Events</a>
+      <a href="/student-my-events.html">My Events</a>
+      <a href="/student-passport.html">My Passport</a>
+      <a href="/student-achievements.html">Achievements</a>
+      <a href="/student-leaderboard.html">Leaderboard</a>
+      <a href="/student-profile.html">Profile</a>
+      <a href="/index.html" class="sidebar-logout">Logout</a>
+    </nav>
+  </aside>
+  <div class="dashboard-main">
+    <header class="dashboard-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h1>Discover Events</h1>
+      <div class="topbar-user">
+        <span>Rahul Sharma</span>
+        <span class="avatar">R</span>
+      </div>
+    </header>
+    <div class="dashboard-content">
+
+<form class="filter-bar" id="eventFilter">
+  <div class="search-input"><input type="text" id="searchQ" placeholder="Search events…"></div>
+  <div class="category-pills" id="categoryPills">
+    <button type="button" class="pill active" data-cat="">All</button>
+    <button type="button" class="pill" data-cat="Technical">Technical</button>
+    <button type="button" class="pill" data-cat="Cultural">Cultural</button>
+    <button type="button" class="pill" data-cat="Sports">Sports</button>
+    <button type="button" class="pill" data-cat="Workshop">Workshop</button>
+    <button type="button" class="pill" data-cat="Seminar">Seminar</button>
+    <button type="button" class="pill" data-cat="Competition">Competition</button>
+  </div>
+</form>
+
+<div class="event-grid" id="eventGrid">
+  <a href="/event-details.html" class="event-card" data-name="Web Development Workshop" data-cat="Workshop">
+    <div class="event-card-top cat-workshop"><span class="event-cat">Workshop</span><span class="event-cat-icon">✎</span></div>
+    <div class="event-card-body">
+      <h3>Web Development Workshop</h3>
+      <p class="event-meta">📅 05 Sep 2026 · 10:00 AM</p>
+      <p class="event-meta">📍 Seminar Hall 1</p>
+      <div class="event-card-foot"><span class="badge badge-success">✓ Registered</span><span class="link-arrow">View →</span></div>
+    </div>
+  </a>
+  <a href="/event-details.html" class="event-card" data-name="AI Machine Learning Seminar" data-cat="Seminar">
+    <div class="event-card-top cat-seminar"><span class="event-cat">Seminar</span><span class="event-cat-icon">◆</span></div>
+    <div class="event-card-body">
+      <h3>AI &amp; Machine Learning Seminar</h3>
+      <p class="event-meta">📅 12 Sep 2026 · 02:00 PM</p>
+      <p class="event-meta">📍 Main Auditorium</p>
+      <div class="event-card-foot"><span class="badge badge-success">✓ Registered</span><span class="link-arrow">View →</span></div>
+    </div>
+  </a>
+  <a href="/event-details.html" class="event-card" data-name="Annual Cultural Fest" data-cat="Cultural">
+    <div class="event-card-top cat-cultural"><span class="event-cat">Cultural</span><span class="event-cat-icon">♪</span></div>
+    <div class="event-card-body">
+      <h3>Annual Cultural Fest</h3>
+      <p class="event-meta">📅 20 Sep 2026 · 06:00 PM</p>
+      <p class="event-meta">📍 Open Air Theatre</p>
+      <div class="event-card-foot"><span class="badge badge-success">✓ Registered</span><span class="link-arrow">View →</span></div>
+    </div>
+  </a>
+  <a href="/event-details.html" class="event-card" data-name="Inter-College Hackathon" data-cat="Competition">
+    <div class="event-card-top cat-competition"><span class="event-cat">Competition</span><span class="event-cat-icon">🏆</span></div>
+    <div class="event-card-body">
+      <h3>Inter-College Hackathon</h3>
+      <p class="event-meta">📅 28 Sep 2026 · 09:00 AM</p>
+      <p class="event-meta">📍 Innovation Lab</p>
+      <div class="event-card-foot"><span class="seats">118 seats left</span><span class="link-arrow">View →</span></div>
+    </div>
+  </a>
+  <a href="/event-details.html" class="event-card" data-name="Sports Meet 2026" data-cat="Sports">
+    <div class="event-card-top cat-sports"><span class="event-cat">Sports</span><span class="event-cat-icon">⚑</span></div>
+    <div class="event-card-body">
+      <h3>Sports Meet 2026</h3>
+      <p class="event-meta">📅 05 Oct 2026 · 08:00 AM</p>
+      <p class="event-meta">📍 College Ground</p>
+      <div class="event-card-foot"><span class="seats">298 seats left</span><span class="link-arrow">View →</span></div>
+    </div>
+  </a>
+  <a href="/event-details.html" class="event-card" data-name="Photography Competition" data-cat="Competition">
+    <div class="event-card-top cat-competition"><span class="event-cat">Competition</span><span class="event-cat-icon">🏆</span></div>
+    <div class="event-card-body">
+      <h3>Photography Competition</h3>
+      <p class="event-meta">📅 12 Oct 2026 · 11:00 AM</p>
+      <p class="event-meta">📍 Conference Hall</p>
+      <div class="event-card-foot"><span class="seats">58 seats left</span><span class="link-arrow">View →</span></div>
+    </div>
+  </a>
+  <a href="/event-details.html" class="event-card" data-name="Entrepreneurship Workshop" data-cat="Workshop">
+    <div class="event-card-top cat-workshop"><span class="event-cat">Workshop</span><span class="event-cat-icon">✎</span></div>
+    <div class="event-card-body">
+      <h3>Entrepreneurship Workshop</h3>
+      <p class="event-meta">📅 18 Oct 2026 · 10:30 AM</p>
+      <p class="event-meta">📍 Seminar Hall 2</p>
+      <div class="event-card-foot"><span class="seats">99 seats left</span><span class="link-arrow">View →</span></div>
+    </div>
+  </a>
+  <a href="/event-details.html" class="event-card" data-name="Science Exhibition" data-cat="Technical">
+    <div class="event-card-top cat-technical"><span class="event-cat">Technical</span><span class="event-cat-icon">⚙</span></div>
+    <div class="event-card-body">
+      <h3>Science Exhibition</h3>
+      <p class="event-meta">📅 25 Oct 2026 · 09:30 AM</p>
+      <p class="event-meta">📍 Exhibition Hall</p>
+      <div class="event-card-foot"><span class="seats">149 seats left</span><span class="link-arrow">View →</span></div>
+    </div>
+  </a>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+<script>
+(function(){
+  var grid = document.getElementById('eventGrid');
+  var search = document.getElementById('searchQ');
+  var pills = document.getElementById('categoryPills');
+  var activeCat = '';
+  function filter() {
+    var q = search.value.toLowerCase();
+    grid.querySelectorAll('.event-card').forEach(function(card) {
+      var name = (card.dataset.name || '').toLowerCase();
+      var cat = card.dataset.cat || '';
+      var matchName = !q || name.indexOf(q) !== -1;
+      var matchCat = !activeCat || cat === activeCat;
+      card.style.display = (matchName && matchCat) ? '' : 'none';
+    });
+  }
+  if (search) search.addEventListener('input', filter);
+  if (pills) pills.querySelectorAll('.pill').forEach(function(pill) {
+    pill.addEventListener('click', function() {
+      pills.querySelectorAll('.pill').forEach(function(p) { p.classList.remove('active'); });
+      pill.classList.add('active');
+      activeCat = pill.dataset.cat;
+      filter();
+    });
+  });
+})();
+</script>
+</body>
+</html>

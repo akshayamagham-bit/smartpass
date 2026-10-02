@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard · SmartPass</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/student-dashboard.html" class="active">Dashboard</a>
+      <a href="/student-events.html">Discover Events</a>
+      <a href="/student-my-events.html">My Events</a>
+      <a href="/student-passport.html">My Passport</a>
+      <a href="/student-achievements.html">Achievements</a>
+      <a href="/student-leaderboard.html">Leaderboard</a>
+      <a href="/student-profile.html">Profile</a>
+      <a href="/index.html" class="sidebar-logout">Logout</a>
+    </nav>
+  </aside>
+  <div class="dashboard-main">
+    <header class="dashboard-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h1>Dashboard</h1>
+      <div class="topbar-user">
+        <span>Rahul Sharma</span>
+        <span class="avatar">R</span>
+      </div>
+    </header>
+    <div class="dashboard-content">
+
+<div class="dash-greeting">
+  <h2>Good evening, Rahul Sharma 👋</h2>
+  <p>Here's your campus activity at a glance.</p>
+</div>
+
+<div class="stat-cards">
+  <div class="stat-card"><span class="stat-card-icon">✓</span><div><span class="stat-card-num">1</span><span class="stat-card-label">Events Attended</span></div></div>
+  <div class="stat-card"><span class="stat-card-icon">🎫</span><div><span class="stat-card-num">1</span><span class="stat-card-label">Stamps Earned</span></div></div>
+  <div class="stat-card"><span class="stat-card-icon">📅</span><div><span class="stat-card-num">2</span><span class="stat-card-label">Upcoming Events</span></div></div>
+  <div class="stat-card"><span class="stat-card-icon">🏆</span><div><span class="stat-card-num">1</span><span class="stat-card-label">Leaderboard Rank</span></div></div>
+</div>
+
+<div class="dash-grid">
+  <div class="dash-panel">
+    <div class="panel-head"><h3>Upcoming Events</h3><a href="/student-events.html" class="link-arrow">All →</a></div>
+    <ul class="mini-event-list">
+      <li>
+        <a href="/event-details.html" class="mini-event">
+          <span class="mini-cat cat-seminar">◆</span>
+          <div><strong>AI &amp; Machine Learning Seminar</strong><span>12 Sep · Main Auditorium</span></div>
+        </a>
+      </li>
+      <li>
+        <a href="/event-details.html" class="mini-event">
+          <span class="mini-cat cat-cultural">♪</span>
+          <div><strong>Annual Cultural Fest</strong><span>20 Sep · Open Air Theatre</span></div>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="dash-panel">
+    <div class="panel-head"><h3>Recent Activity</h3></div>
+    <ul class="activity-list">
+      <li><span class="activity-tick">✓</span> Earned stamp for <strong>Web Development Workshop</strong></li>
+      <li><span class="activity-tick">✓</span> Registered for <strong>AI &amp; Machine Learning Seminar</strong></li>
+      <li><span class="activity-tick">✓</span> Registered for <strong>Annual Cultural Fest</strong></li>
+      <li><span class="activity-tick">✓</span> Unlocked <strong>First Step</strong> badge</li>
+    </ul>
+  </div>
+
+  <div class="dash-panel">
+    <div class="panel-head"><h3>Passport Progress</h3><a href="/student-passport.html" class="link-arrow">View →</a></div>
+    <div class="progress-block">
+      <div class="progress-label"><span>1 / 5</span> events completed</div>
+      <div class="progress-bar"><div class="progress-fill" style="width: 20%"></div></div>
+    </div>
+  </div>
+
+  <div class="dash-panel">
+    <div class="panel-head"><h3>Achievement Preview</h3><a href="/student-achievements.html" class="link-arrow">All →</a></div>
+    <div class="badge-preview-grid">
+      <div class="badge-sm"><span class="badge-icon">🏅</span><span class="badge-name">First Step</span></div>
+      <div class="badge-sm locked"><span class="badge-icon">🔒</span><span class="badge-name">Event Explorer</span></div>
+      <div class="badge-sm locked"><span class="badge-icon">🔒</span><span class="badge-name">Campus Champion</span></div>
+      <div class="badge-sm locked"><span class="badge-icon">🔒</span><span class="badge-name">Tech Enthusiast</span></div>
+      <div class="badge-sm locked"><span class="badge-icon">🔒</span><span class="badge-name">Culture Lover</span></div>
+      <div class="badge-sm locked"><span class="badge-icon">🔒</span><span class="badge-name">All-Rounder</span></div>
+    </div>
+  </div>
+
+  <div class="dash-panel">
+    <div class="panel-head"><h3>Leaderboard Preview</h3><a href="/student-leaderboard.html" class="link-arrow">Full →</a></div>
+    <ol class="mini-leaderboard">
+      <li><span class="lb-rank">1</span><span class="lb-name">Rahul Sharma</span><span class="lb-dept">CSE</span><span class="lb-stamps">1 🎫</span></li>
+      <li><span class="lb-rank">2</span><span class="lb-name">Ananya Verma</span><span class="lb-dept">ECE</span><span class="lb-stamps">0 🎫</span></li>
+      <li><span class="lb-rank">3</span><span class="lb-name">Teja Reddy</span><span class="lb-dept">CSE</span><span class="lb-stamps">0 🎫</span></li>
+      <li><span class="lb-rank">4</span><span class="lb-name">Priya Nair</span><span class="lb-dept">IT</span><span class="lb-stamps">0 🎫</span></li>
+    </ol>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

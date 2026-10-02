@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  DTD for SmartPass events.xml
+  Defines the valid structure of the events XML document.
+-->
+<!ELEMENT events (event+)>
+<!ELEMENT event (id, name, category, date, time, venue)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT venue (#PCDATA)>
+
+<!ATTLIST event status CDATA "upcoming">

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Passport · SmartPass</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/student-dashboard.html">Dashboard</a>
+      <a href="/student-events.html">Discover Events</a>
+      <a href="/student-my-events.html">My Events</a>
+      <a href="/student-passport.html" class="active">My Passport</a>
+      <a href="/student-achievements.html">Achievements</a>
+      <a href="/student-leaderboard.html">Leaderboard</a>
+      <a href="/student-profile.html">Profile</a>
+      <a href="/index.html" class="sidebar-logout">Logout</a>
+    </nav>
+  </aside>
+  <div class="dashboard-main">
+    <header class="dashboard-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h1>My Passport</h1>
+      <div class="topbar-user">
+        <span>Rahul Sharma</span>
+        <span class="avatar">R</span>
+      </div>
+    </header>
+    <div class="dashboard-content">
+
+<div class="passport">
+  <div class="passport-card">
+    <div class="passport-header">
+      <div class="passport-header-text">
+        <h2>Event Passport</h2>
+        <p>Discover · Participate · Collect · Achieve</p>
+      </div>
+      <div class="passport-logo">SP</div>
+    </div>
+
+    <div class="passport-student">
+      <div class="passport-student-item"><span class="label">Name</span><span class="value">Rahul Sharma</span></div>
+      <div class="passport-student-item"><span class="label">Register No.</span><span class="value">CS21B001</span></div>
+      <div class="passport-student-item"><span class="label">Department</span><span class="value">CSE</span></div>
+      <div class="passport-student-item"><span class="label">Year</span><span class="value">3rd Year</span></div>
+    </div>
+
+    <div class="passport-events" id="passportEvents">
+      <a href="/event-details.html" class="passport-event completed">
+        <span class="passport-event-icon">⚙</span>
+        <span class="passport-event-name">Web Workshop</span>
+        <span class="passport-event-status stamp-mark">✓ Stamped</span>
+      </a>
+      <div class="passport-event locked" data-event-id="2">
+        <span class="passport-event-icon">🏆</span>
+        <span class="passport-event-name">Hackathon</span>
+        <span class="passport-event-status">Not registered</span>
+      </div>
+      <div class="passport-event locked" data-event-id="3">
+        <span class="passport-event-icon">🎵</span>
+        <span class="passport-event-name">Cultural Fest</span>
+        <span class="passport-event-status">Registered</span>
+      </div>
+      <div class="passport-event locked" data-event-id="4">
+        <span class="passport-event-icon">🚩</span>
+        <span class="passport-event-name">Sports Meet</span>
+        <span class="passport-event-status">Not registered</span>
+      </div>
+      <div class="passport-event locked" data-event-id="5">
+        <span class="passport-event-icon">🔬</span>
+        <span class="passport-event-name">Science Expo</span>
+        <span class="passport-event-status">Not registered</span>
+      </div>
+      <div class="passport-event locked" data-event-id="6">
+        <span class="passport-event-icon">◆</span>
+        <span class="passport-event-name">AI Seminar</span>
+        <span class="passport-event-status">Registered</span>
+      </div>
+    </div>
+
+    <div class="passport-footer">
+      <p class="passport-completion"><span class="count" id="completedCount">1</span> / 6 events completed</p>
+      <div class="passport-progress-bar"><div class="passport-progress-fill" id="passportProgressFill" style="width: 16.7%"></div></div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+<script>
+(function() {
+  var events = document.querySelectorAll('#passportEvents .passport-event');
+  var completedCount = 0;
+  events.forEach(function(ev) {
+    if (ev.classList.contains('completed')) completedCount++;
+    if (ev.tagName === 'A') return;
+    ev.addEventListener('click', function() {
+      var eventId = ev.getAttribute('data-event-id');
+      if (eventId) window.location.href = '/event-details.html';
+    });
+  });
+  var total = events.length;
+  var countEl = document.getElementById('completedCount');
+  var fillEl = document.getElementById('passportProgressFill');
+  if (countEl) countEl.textContent = completedCount;
+  if (fillEl) fillEl.style.width = (total > 0 ? (completedCount / total * 100) : 0) + '%';
+  var completionText = document.querySelector('.passport-completion');
+  if (completionText) {
+    completionText.innerHTML = '<span class="count">' + completedCount + '</span> / ' + total + ' events completed';
+  }
+})();
+</script>
+</body>
+</html>

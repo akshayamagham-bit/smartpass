@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reports · SmartPass Admin</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/admin-dashboard.html">Dashboard</a>
+      <a href="/admin-events.html">Manage Events</a>
+      <a href="/admin-add-event.html">Add Event</a>
+      <a href="/admin-students.html">Students</a>
+      <a href="/admin-registrations.html">Registrations</a>
+      <a href="/admin-attendance.html">Attendance</a>
+      <a href="/admin-reports.html" class="active">Reports</a>
+      <a href="/index.html" class="sidebar-logout">Logout</a>
+    </nav>
+  </aside>
+  <div class="dashboard-main">
+    <header class="dashboard-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h1>Reports</h1>
+      <div class="topbar-user">
+        <span>Admin User</span>
+        <span class="avatar">A</span>
+      </div>
+    </header>
+    <div class="dashboard-content">
+
+<div class="report-summary">
+  <div class="report-card"><span class="rc-num">8</span><span class="rc-label">Total Events</span></div>
+  <div class="report-card"><span class="rc-num">5</span><span class="rc-label">Participants</span></div>
+  <div class="report-card"><span class="rc-num">5</span><span class="rc-label">Registrations</span></div>
+  <div class="report-card"><span class="rc-num">1</span><span class="rc-label">Stamps Issued</span></div>
+</div>
+
+<div class="dash-grid">
+  <div class="dash-panel">
+    <div class="panel-head"><h3>Most Popular Event</h3></div>
+    <p class="report-highlight">AI &amp; Machine Learning Seminar</p>
+    <p>2 registrations</p>
+  </div>
+  <div class="dash-panel">
+    <div class="panel-head"><h3>Most Active Student</h3></div>
+    <p class="report-highlight">Rahul Sharma</p>
+    <p>CSE · 1 stamps</p>
+  </div>
+</div>
+
+<div class="dash-panel">
+  <div class="panel-head"><h3>Category-wise Participation</h3></div>
+  <div class="cat-bars">
+    <div class="cat-bar-row"><span class="cat-bar-label">Workshop</span><div class="cat-bar-track"><div class="cat-bar-fill cat-workshop" style="width: 50%"></div></div><span class="cat-bar-num">1</span></div>
+    <div class="cat-bar-row"><span class="cat-bar-label">Seminar</span><div class="cat-bar-track"><div class="cat-bar-fill cat-seminar" style="width: 100%"></div></div><span class="cat-bar-num">2</span></div>
+    <div class="cat-bar-row"><span class="cat-bar-label">Cultural</span><div class="cat-bar-track"><div class="cat-bar-fill cat-cultural" style="width: 50%"></div></div><span class="cat-bar-num">1</span></div>
+    <div class="cat-bar-row"><span class="cat-bar-label">Competition</span><div class="cat-bar-track"><div class="cat-bar-fill cat-competition" style="width: 50%"></div></div><span class="cat-bar-num">1</span></div>
+    <div class="cat-bar-row"><span class="cat-bar-label">Sports</span><div class="cat-bar-track"><div class="cat-bar-fill cat-sports" style="width: 0%"></div></div><span class="cat-bar-num">0</span></div>
+    <div class="cat-bar-row"><span class="cat-bar-label">Technical</span><div class="cat-bar-track"><div class="cat-bar-fill cat-technical" style="width: 0%"></div></div><span class="cat-bar-num">0</span></div>
+  </div>
+</div>
+
+<div class="dash-panel">
+  <div class="panel-head"><h3>Attendance Statistics</h3></div>
+  <div class="att-stats">
+    <div class="att-stat present"><span>1</span><label>Present</label></div>
+    <div class="att-stat absent"><span>0</span><label>Absent</label></div>
+    <div class="att-stat pending"><span>4</span><label>Pending</label></div>
+  </div>
+  <div class="progress-bar big"><div class="progress-fill present" style="width: 20%"></div></div>
+  <p class="progress-note">20% attendance rate</p>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+</body>
+</html>

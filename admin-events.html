@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Events · SmartPass Admin</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="dashboard-body">
+<div class="dashboard-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-mark">SP</span>
+      <span class="brand-name">SMART<span class="brand-accent">PASS</span></span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/admin-dashboard.html">Dashboard</a>
+      <a href="/admin-events.html" class="active">Manage Events</a>
+      <a href="/admin-add-event.html">Add Event</a>
+      <a href="/admin-students.html">Students</a>
+      <a href="/admin-registrations.html">Registrations</a>
+      <a href="/admin-attendance.html">Attendance</a>
+      <a href="/admin-reports.html">Reports</a>
+      <a href="/index.html" class="sidebar-logout">Logout</a>
+    </nav>
+  </aside>
+  <div class="dashboard-main">
+    <header class="dashboard-topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+      <h1>Manage Events</h1>
+      <div class="topbar-user">
+        <span>Admin User</span>
+        <span class="avatar">A</span>
+      </div>
+    </header>
+    <div class="dashboard-content">
+
+<div class="panel-head">
+  <h3>All Events (8)</h3>
+  <a href="/admin-add-event.html" class="btn btn-primary">+ Add Event</a>
+</div>
+
+<div class="admin-table">
+  <table>
+    <thead><tr><th>Event</th><th>Category</th><th>Date</th><th>Venue</th><th>Capacity</th><th>Regs</th><th>Actions</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Web Development Workshop</strong><br><small>CSE Department</small></td>
+        <td><span class="cat-pill" data-cat="Workshop">Workshop</span></td>
+        <td>05 Sep 2026</td>
+        <td>Seminar Hall 1</td>
+        <td>80</td><td>1</td>
+        <td class="row-actions">
+          <a href="/admin-add-event.html" class="btn btn-sm">Edit</a>
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>AI &amp; ML Seminar</strong><br><small>AI Research Cell</small></td>
+        <td><span class="cat-pill" data-cat="Seminar">Seminar</span></td>
+        <td>12 Sep 2026</td><td>Main Auditorium</td><td>200</td><td>2</td>
+        <td class="row-actions">
+          <a href="/admin-add-event.html" class="btn btn-sm">Edit</a>
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Annual Cultural Fest</strong><br><small>Cultural Committee</small></td>
+        <td><span class="cat-pill" data-cat="Cultural">Cultural</span></td>
+        <td>20 Sep 2026</td><td>Open Air Theatre</td><td>500</td><td>1</td>
+        <td class="row-actions">
+          <a href="/admin-add-event.html" class="btn btn-sm">Edit</a>
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Inter-College Hackathon</strong><br><small>Coding Club</small></td>
+        <td><span class="cat-pill" data-cat="Competition">Competition</span></td>
+        <td>28 Sep 2026</td><td>Innovation Lab</td><td>120</td><td>1</td>
+        <td class="row-actions">
+          <a href="/admin-add-event.html" class="btn btn-sm">Edit</a>
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Sports Meet 2026</strong><br><small>Sports Department</small></td>
+        <td><span class="cat-pill" data-cat="Sports">Sports</span></td>
+        <td>05 Oct 2026</td><td>College Ground</td><td>300</td><td>0</td>
+        <td class="row-actions">
+          <a href="/admin-add-event.html" class="btn btn-sm">Edit</a>
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Photography Competition</strong><br><small>Photography Club</small></td>
+        <td><span class="cat-pill" data-cat="Competition">Competition</span></td>
+        <td>12 Oct 2026</td><td>Conference Hall</td><td>60</td><td>0</td>
+        <td class="row-actions">
+          <a href="/admin-add-event.html" class="btn btn-sm">Edit</a>
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Entrepreneurship Workshop</strong><br><small>E-Cell</small></td>
+        <td><span class="cat-pill" data-cat="Workshop">Workshop</span></td>
+        <td>18 Oct 2026</td><td>Seminar Hall 2</td><td>100</td><td>0</td>
+        <td class="row-actions">
+          <a href="/admin-add-event.html" class="btn btn-sm">Edit</a>
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Science Exhibition</strong><br><small>Science Forum</small></td>
+        <td><span class="cat-pill" data-cat="Technical">Technical</span></td>
+        <td>25 Oct 2026</td><td>Exhibition Hall</td><td>150</td><td>0</td>
+        <td class="row-actions">
+          <a href="/admin-add-event.html" class="btn btn-sm">Edit</a>
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+    </div>
+  </div>
+</div>
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="/js/script.js"></script>
+<script>
+document.querySelectorAll('.btn-danger').forEach(function(btn) {
+  if (btn.tagName === 'BUTTON') {
+    btn.addEventListener('click', function() {
+      if (confirm('Delete this event? This cannot be undone.')) {
+        window.showToast('Event deleted', 'success');
+        var row = btn.closest('tr');
+        if (row) row.remove();
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>
